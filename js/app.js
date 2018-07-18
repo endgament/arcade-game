@@ -1,4 +1,7 @@
-
+/* ----Declaring variables----*/
+let scoreCurrent = 0;
+const scoreUpdate = document.querySelector('.score');
+let allEnemies = [];
 
 // Enemies our player must avoid
 class Enemy  {
