@@ -42,9 +42,10 @@ class Enemy  {
 // This class requires an update(), render() and
 // a handleInput() method.
 class Player {
-    constructor (x,y) {
+    constructor (x,y,speed) {
         this.x = x;
         this.y = y;
+        this.speed = speed;
         this.sprite = "images/char-boy.png";
     };
 
