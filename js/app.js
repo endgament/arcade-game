@@ -104,14 +104,14 @@ class Player {
 }
 
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-let bug1 = new Enemy;
-let bug2 = new Enemy;
-let bug3 = new Enemy;
-allEnemies = ['bug1','bug2','bug3'];
-//player = ;
+/* ----Instantiate your objects----*/
+
+// y position of all enemies
+yPosition = [60,140,230];
+yPosition.forEach(function(y) {
+    bug = new Enemy(0, y, Math.floor((Math.random() * 200) + 100))
+    allEnemies.push(bug); // put all the bugs in the allEnemies array
+})
 
 
 // This listens for key presses and sends the keys to your
