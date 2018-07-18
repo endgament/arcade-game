@@ -113,6 +113,9 @@ yPosition.forEach(function(y) {
     allEnemies.push(bug); // put all the bugs in the allEnemies array
 })
 
+// Place the player object in a variable called player
+player = new Player(200, 400, 50);
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
