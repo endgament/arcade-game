@@ -49,9 +49,30 @@ class Player {
         this.sprite = "images/char-boy.png";
     };
 
-    /*update(){
-        function(dt) {
+    update(dt){
 
+        if (this.y > 380) {
+        this.y = 380;
+        }
+
+        if (this.x > 400) {
+        this.x = 400;
+        }
+
+        if (this.x < 0) {
+        this.x = 0;
+        }
+
+        // Check for player reaching top of canvas and winning the game
+        if (this.y < 0) {
+            this.x = 200;
+            this.y = 400;
+            scoreCurrent++;
+            scoreUpdate.textContent = 'Score: ' + scoreCurrent;
+            if (scoreCurrent % 10 === 0) {
+               // winModal();
+            }
+            
         }
     };
 
