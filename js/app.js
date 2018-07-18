@@ -9,15 +9,29 @@ class Enemy  {
         this.sprite = 'images/enemy-bug.png';
     }
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-    this.x += this.speed * dt;
+    // Update the enemy's position, required method for game
+    // Parameter: dt, a time delta between ticks
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    update(dt) {
+        this.x += this.speed * dt; //they move only in x-axis
+        if (this.x > 505) {
+            this.x = -50;
+        } 
+        //Check for collision
+        if (player.x < this.x + 65 && player.x + 35 > this.x &&
+            player.y < this.y + 50 && 50 + player.y > this.y) {
+                player.x = 200;
+                player.y = 400;
+                if (scoreCurrent != 0 && scoreCurrent > 0) {
+                    scoreCurrent--;
+                    scoreUpdate.textContent = 'Score: ' + scoreCurrent;
+                }  
+        }        
+        
+    };
 };
-
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
