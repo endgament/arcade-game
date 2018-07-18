@@ -83,8 +83,21 @@ class Player {
     };
 
     handleInput(key) {
-        
-    };*/
+        switch(key) {
+            case 'left':
+                this.x -= 50;
+                break;
+            case 'right':
+                this.x += 50;
+                break;
+            case 'up':
+                this.y -= 50;
+                break;
+            case 'down':
+                this.y += 50;
+                break;        
+        }
+    };
 }
 
 
