@@ -2,6 +2,17 @@
 let scoreCurrent = 0;
 const scoreUpdate = document.querySelector('.score');
 let allEnemies = [];
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
+
+(function startGame() {
+    window.onload = function(e) {
+        modal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+}})();
 
 // Enemies our player must avoid
 class Enemy  {
