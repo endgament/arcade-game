@@ -3,7 +3,7 @@ FrontEnd Nanodegree Arcade Game
 
 ## How to play
 
-Go to https://endgament.github.io/arcade-game/, read the instructions and push the play button, to start the game.
+Go to https://endgament.github.io/arcade-game/, read the instructions on the screen and push the play button, to start the game.
 
 The object of the game is to hit the water avoiding the bugs. 
 
