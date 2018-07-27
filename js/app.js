@@ -4,15 +4,24 @@ const scoreUpdate = document.querySelector('.score');
 let allEnemies = [];
 var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
+var winModal = document.getElementById('win-modal');
 
+// Start the game
 (function startGame() {
     window.onload = function(e) {
         modal.style.display = "block";
     }
-    // When the user clicks on <span> (x), close the modal
+    // When the user clicks on <span> (Play), close the modal
     span.onclick = function() {
         modal.style.display = "none";
 }})();
+
+// Game end
+function winModal() {
+    winModal.style.display = "block";
+    scoreCurrent = 0;
+    allEnemies = [];
+}
 
 // Enemies our player must avoid
 class Enemy  {
@@ -83,8 +92,8 @@ class Player {
             this.y = 400;
             scoreCurrent++;
             scoreUpdate.textContent = 'Score: ' + scoreCurrent;
-            if (scoreCurrent % 10 === 0) {
-               // winModal();
+            if (scoreCurrent % 2 === 0) {
+               winModal();
             }
             
         }

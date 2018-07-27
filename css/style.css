@@ -13,11 +13,32 @@ body {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
+}
+
+.rules-modal {
+	background-color: rgba(0,0,0,0); /* Black w/ opacity */
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height: 40%;
+
+}
+
+/* Win modal */
+.win_modal {
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.rules-modal {
+.end-modal {
 	background-color: #d9eac8; /* Light Green */
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -25,6 +46,7 @@ body {
     width: 80%; /* Could be more or less, depending on screen size */
     height: 40%;
 }
+
 
 /* The Close Button */
 .close {
@@ -37,6 +59,8 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .close:hover,
