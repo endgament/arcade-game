@@ -16,13 +16,6 @@ var winModal = document.getElementById('win-modal');
         modal.style.display = "none";
 }})();
 
-// Game end
-function winModal() {
-    winModal.style.display = "block";
-    scoreCurrent = 0;
-    allEnemies = [];
-}
-
 // Enemies our player must avoid
 class Enemy  {
     constructor(x,y) {
@@ -47,11 +40,19 @@ class Enemy  {
             player.y < this.y + 50 && 50 + player.y > this.y) {
                 player.x = 200;
                 player.y = 400;
+                //Remove a point when collision occurs
                 if (scoreCurrent != 0 && scoreCurrent > 0) {
                     scoreCurrent--;
                     scoreUpdate.textContent = 'Score: ' + scoreCurrent;
                 }  
-        }        
+        }
+        //End the game  
+        if (scoreCurrent  === 10) {
+            winModal.style.display = "block";
+            scoreCurrent = 0;
+            allEnemies = [];
+
+        }     
         
     };
     // Draw the enemy on the screen, required method for game
@@ -59,7 +60,6 @@ class Enemy  {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     };
 };
-
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -92,9 +92,7 @@ class Player {
             this.y = 400;
             scoreCurrent++;
             scoreUpdate.textContent = 'Score: ' + scoreCurrent;
-            if (scoreCurrent % 2 === 0) {
-               winModal();
-            }
+            
             
         }
     };
@@ -147,3 +145,5 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
