@@ -47,7 +47,7 @@ class Enemy  {
                 }  
         }
         //End the game  
-        if (scoreCurrent  === 10) {
+        if (scoreCurrent  === 1) {
             winModal.style.display = "block";
             scoreCurrent = 0;
             allEnemies = [];
