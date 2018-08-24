@@ -52,7 +52,7 @@ body {
 .close {
     color: #0b4017;
     background-color: #4CAF50;
-    float: center;
+    margin: auto;
     font-size: 28px;
     font-weight: bold;
     padding: 15px 32px;
