@@ -10,7 +10,7 @@ var winModal = document.getElementById('win-modal');
 (function startGame() {
     window.onload = function(e) {
         modal.style.display = "block";
-    }
+    };
     // When the user clicks on <span> (Play), close the modal
     span.onclick = function() {
         modal.style.display = "none";
@@ -36,8 +36,8 @@ class Enemy  {
             this.x = -50;
         } 
         //Check for collision
-        if (player.x < this.x + 65 && player.x + 35 > this.x &&
-            player.y < this.y + 50 && 50 + player.y > this.y) {
+        if (player.x < this.x + 80 && player.x + 60 > this.x &&
+            player.y < this.y + 70 && 65 + player.y > this.y) {
                 player.x = 200;
                 player.y = 400;
                 //Remove a point when collision occurs
@@ -47,19 +47,19 @@ class Enemy  {
                 }  
         }
         //End the game  
-        if (scoreCurrent  === 10) {
+        if (scoreCurrent  === 1) {
             winModal.style.display = "block";
             scoreCurrent = 0;
             allEnemies = [];
 
         }     
         
-    };
+    }
     // Draw the enemy on the screen, required method for game
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    };
-};
+    }
+}
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -70,7 +70,7 @@ class Player {
         this.y = y;
         this.speed = speed;
         this.sprite = "images/char-boy.png";
-    };
+    }
 
     update(dt){
 
@@ -92,14 +92,12 @@ class Player {
             this.y = 400;
             scoreCurrent++;
             scoreUpdate.textContent = 'Score: ' + scoreCurrent;
-            
-            
         }
-    };
+    }
 
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    };
+    }
 
     handleInput(key) {
         switch(key) {
@@ -116,18 +114,18 @@ class Player {
                 this.y += 50;
                 break;        
         }
-    };
+    }
 }
 
 
 /* ----Instantiate your objects----*/
 
 // y position of all enemies
-yPosition = [60,140,230];
+yPosition = [65,145,230];
 yPosition.forEach(function(y) {
-    bug = new Enemy(0, y, Math.floor((Math.random() * 200) + 100))
+    bug = new Enemy(0, y, Math.floor((Math.random() * 200) + 100));
     allEnemies.push(bug); // put all the bugs in the allEnemies array
-})
+});
 
 // Place the player object in a variable called player
 player = new Player(200, 400, 50);
